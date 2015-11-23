@@ -25,8 +25,8 @@ class BrowserifyCompiler(SubProcessCompiler):
             outfile
         )
         print('\ncommand:', command)
-        if hasattr(settings, 'BROWSERIFY_CWD'):
-            cwd = settings.BROWSERIFY_CWD
+        if hasattr(settings, 'PIPELINE_BROWSERIFY_CWD'):
+            cwd = settings.PIPELINE_BROWSERIFY_CWD
         else:
             cwd = dirname(infile)
         return self.execute_command(command, cwd=cwd)
